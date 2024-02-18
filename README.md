@@ -9,7 +9,7 @@ The Authentication Microservice provides functionalities for user registration, 
 
 1. Clone the repository:
    ```
-   git clone https://github.com/your_username/your_repository.git
+   git clone https://github.com/mujjasaikumar/authentication_microservice.git
    ```
 2. Install dependencies:
    ```
@@ -92,8 +92,6 @@ The Authentication Microservice provides functionalities for user registration, 
 
 ## Author
 
-Your Name (Your Email)
+Saikumar Mujja
 
 ---
-
-Feel free to customize this documentation to include additional details or sections as needed.
