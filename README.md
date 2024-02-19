@@ -48,9 +48,9 @@ The Authentication Microservice provides functionalities for user registration, 
   - `phone_number`: Phone number of the user.
 - Description: Sends an SMS OTP to the user's phone for authentication.
 
-### 4. OTP Verification
+### 4. Mobile Verification
 
-- Endpoint: `/otp_verification`
+- Endpoint: `/verify_mobile`
 - Method: `POST`
 - Parameters:
   - `otp`: One-time password sent to the user's phone.
