@@ -15,8 +15,8 @@ app.secret_key = 'your_secret_key_here'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
 db = SQLAlchemy(app)
 
-my_email = "sainewlearnings@gmail.com"
-my_password = 'jokp nxci tjlp jvgp'
+my_email = "sample@gmail.com" # email through you have to send otp
+my_password = 'app_password' 
 
 
 # Define User model
@@ -65,28 +65,6 @@ def verify_email_otp(email):
         return otp
     except Exception as e:
         print(f"An error occurred: {e}")
-
-# @app.route('/register', methods=['GET', 'POST'])
-# def register():
-#     if request.method == 'POST':
-#         # Get registration data from the form
-#         first_name = request.form['first_name']
-#         last_name = request.form['last_name']
-#         email = request.form['email']
-#         phone_number = request.form['phone_number']
-#         password = request.form['password']
-#
-#         # Check if user already exists in the database
-#         if User.query.filter_by(email=email).first() or User.query.filter_by(phone_number=phone_number).first():
-#             return jsonify({'message': 'User with same email or phone_number already exists'})
-#
-#         # Create a new user object and add it to the database
-#         new_user = User(first_name=first_name, last_name=last_name, email=email, phone_number=phone_number,
-#                         password=password)
-#         db.session.add(new_user)
-#         db.session.commit()
-#         return jsonify({'message': 'User registered successfully'})
-#     return render_template('register.html')
 
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -161,8 +139,8 @@ def login():
     return render_template('login.html')
 
 
-@app.route('/otp_verification', methods=['GET', 'POST'])
-def otp_verification():
+@app.route('/verify_mobile', methods=['GET', 'POST'])
+def verify_mobile():
     if request.method == 'POST':
         entered_otp = request.form['otp']
         # Retrieve phone number and OTP from the session
@@ -174,7 +152,7 @@ def otp_verification():
             return jsonify({'message': f'Logged in as {user.first_name} {user.last_name}'})
         else:
             return jsonify({'error': 'Incorrect OTP. Please try again'})
-    return render_template('otp_verification.html')
+    return render_template('verify_mobile.html')
 
 
 @app.route('/update', methods=['GET', 'POST'])
